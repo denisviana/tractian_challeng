@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:my_app/app/styles/theme_data_radio_life.dart';
-
+import 'package:my_app/app/pages/home_page.dart';
 import '../generated/l10n.dart';
 import 'app_binding.dart';
-import 'app_routes.dart';
 import 'styles/app_color_scheme.dart';
 import 'styles/app_theme_data.dart';
 import 'utils/widget_utils.dart';
@@ -21,23 +19,18 @@ class AppWidget extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        builder: (context, child) {
-          ThemeDataMyApp.setIsDark(context);
-          return Scaffold(
+        builder: (context, child) => Scaffold(
             backgroundColor: AppColorScheme.background,
             body: GestureDetector(
               onTap: () => WidgetUtils.hideKeyboard(context),
               child: child,
             ),
-          );
-        },
+          ),
         debugShowCheckedModeBanner: false,
-        title: 'My App',
-        themeMode: AppThemeData.themeMode,
-        theme: AppThemeData.themeData,
-        darkTheme: AppThemeData.themeDataDark,
-        getPages: AppRoutes.routes,
-        initialRoute: Routes.initial,
+        title: 'Tractian',
+        home: HomePage(),
         initialBinding: AppBinding(),
+        theme: ThemeDataMyApp.lightTheme,
+        themeMode: ThemeMode.light,
       );
 }

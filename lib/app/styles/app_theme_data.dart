@@ -1,130 +1,58 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/app/styles/theme_data_radio_life.dart';
-
+import 'package:get/get.dart';
 import 'app_color_scheme.dart';
-import 'app_font_size.dart';
-import 'app_font_weight.dart';
-import 'app_spacing.dart';
-import 'app_text_theme.dart';
 
-/// https://medium.com/flutter-community/page-transitions-using-themedata-in-flutter-c24afadb0b5d
-class AppThemeData extends ThemeDataMyApp {
-  AppThemeData._();
-
-  static bool? _appThemeModeIsDark;
-
-  static void setIfAppThemeModeIsDark({bool? isDark}) {
-    _appThemeModeIsDark = isDark;
-  }
-
-  static bool get appThemeModeIsDark => _appThemeModeIsDark ?? ThemeDataMyApp.isDark ?? true;
-
-  static ThemeData get themeData => appThemeModeIsDark ? themeDataDark : themeDataLight;
-  static ThemeMode get themeMode => ThemeDataMyApp.isDark == null
-      ? ThemeMode.system
-      : appThemeModeIsDark
-          ? ThemeMode.dark
-          : ThemeMode.light;
-
-  static final ThemeData themeDataLight = ThemeData(
+class ThemeDataMyApp {
+  static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    visualDensity: VisualDensity.adaptivePlatformDensity,
-    primarySwatch: AppColorScheme.primarySwatchLight,
-    textTheme: AppTextTheme.textTheme,
-    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
-    tabBarTheme: const TabBarTheme(
-      labelStyle: TextStyle(
-          fontSize: AppFontSize.primary,
-          fontWeight: AppFontWeight.semiBold,
-          fontFamily: 'Montserrat'),
-      unselectedLabelStyle: TextStyle(
-          fontSize: AppFontSize.primary,
-          fontWeight: AppFontWeight.semiBold,
-          fontFamily: 'Montserrat'),
-      labelPadding: EdgeInsets.symmetric(horizontal: AppSpacing.extraSmall),
+    primaryColor: AppColorScheme.primary,
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColorScheme.background,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(color: Colors.white),
     ),
-    scaffoldBackgroundColor: RadioLifeLightThemeColors.background,
-    colorScheme: AppColorScheme.colorSchemeLight,
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
-    textSelectionTheme: TextSelectionThemeData(
-      selectionColor: AppColorScheme.successLight,
-      cursorColor: AppColorScheme.success,
-      selectionHandleColor: AppColorScheme.success,
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.white),
+      bodyMedium: TextStyle(color: Colors.white),
+      titleLarge: TextStyle(color: Colors.white),
     ),
-    appBarTheme:
-        const AppBarTheme(backgroundColor: RadioLifeLightThemeColors.background, elevation: 0),
-    pageTransitionsTheme: const PageTransitionsTheme(
-      builders: {
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-        TargetPlatform.fuchsia: ZoomPageTransitionsBuilder(),
-      },
+    buttonTheme: const ButtonThemeData(
+      buttonColor: AppColorScheme.primary,
+      textTheme: ButtonTextTheme.primary,
     ),
-    cupertinoOverrideTheme: const CupertinoThemeData(
-      brightness: Brightness.light,
-    ),
-    iconTheme: IconThemeData(
-      color: AppColorScheme.primarySwatchLight[500],
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-      showSelectedLabels: true,
-      elevation: 0,
-    ),
-    buttonTheme: ButtonThemeData(
-        colorScheme: AppColorScheme.colorSchemeLight, textTheme: ButtonTextTheme.primary),
+    colorScheme: const ColorScheme.light(
+      primary: AppColorScheme.primary,
+      surface: AppColorScheme.background,
+    ).copyWith(surface: AppColorScheme.background),
   );
 
-  static final ThemeData themeDataDark = ThemeData(
-    visualDensity: VisualDensity.adaptivePlatformDensity,
+  static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primarySwatch: AppColorScheme.primarySwatchDark,
-    splashColor: Colors.transparent,
-    highlightColor: Colors.transparent,
-    tabBarTheme: const TabBarTheme(
-      labelStyle: TextStyle(
-          fontSize: AppFontSize.primary,
-          fontWeight: AppFontWeight.semiBold,
-          fontFamily: 'Montserrat'),
-      unselectedLabelStyle: TextStyle(
-          fontSize: AppFontSize.primary,
-          fontWeight: AppFontWeight.semiBold,
-          fontFamily: 'Montserrat'),
-      labelPadding: EdgeInsets.symmetric(horizontal: AppSpacing.extraSmall),
-    ),
-    textTheme: AppTextTheme.textTheme,
-    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
-    scaffoldBackgroundColor: RadioLifeDarkThemeColors.background,
-    colorScheme: AppColorScheme.colorSchemeDark,
-    textSelectionTheme: TextSelectionThemeData(
-      selectionColor: AppColorScheme.successLight,
-      cursorColor: AppColorScheme.success,
-      selectionHandleColor: AppColorScheme.success,
-    ),
+    primaryColor: AppColorScheme.primary,
+    scaffoldBackgroundColor: AppColorScheme.background,
     appBarTheme: const AppBarTheme(
-      backgroundColor: RadioLifeDarkThemeColors.background,
-      elevation: 0,
+      color: AppColorScheme.background,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(color: Colors.white),
     ),
-    pageTransitionsTheme: const PageTransitionsTheme(
-      builders: {
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-        TargetPlatform.fuchsia: ZoomPageTransitionsBuilder(),
-      },
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.white),
+      bodyMedium: TextStyle(color: Colors.white),
+      titleLarge: TextStyle(color: Colors.white),
     ),
-    iconTheme: IconThemeData(
-      color: AppColorScheme.primarySwatchDark[500],
+    buttonTheme: const ButtonThemeData(
+      buttonColor: AppColorScheme.primary,
+      textTheme: ButtonTextTheme.primary,
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: RadioLifeDarkThemeColors.backgroundLight,
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: RadioLifeDarkThemeColors.emphasis,
-      unselectedItemColor: RadioLifeDarkThemeColors.emphasis.withOpacity(0.3),
-      elevation: 0,
-    ),
-    buttonTheme: ButtonThemeData(
-        colorScheme: AppColorScheme.colorSchemeDark, textTheme: ButtonTextTheme.primary),
+    colorScheme: const ColorScheme.dark(
+      primary: AppColorScheme.primary,
+      surface: AppColorScheme.background,
+    ).copyWith(surface: AppColorScheme.background),
   );
+
+  static void setIsDark(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    Get.changeTheme(brightness == Brightness.dark ? darkTheme : lightTheme);
+  }
 }

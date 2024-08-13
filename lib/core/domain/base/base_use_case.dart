@@ -1,4 +1,4 @@
-import '../../../resource/resource.dart';
+import '../../data/model/resource.dart';
 
 abstract class BaseFutureResourceUseCase<Param, Result> extends BaseUseCase {
   Future<Resource<Result?>> call(Param params);

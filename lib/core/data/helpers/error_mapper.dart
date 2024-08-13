@@ -7,7 +7,7 @@ class ErrorMapper {
   static AppException from(dynamic e) => e is DioError
       ? AppException(
           exception: e,
-          description: _dioError(e),
+          description: '_dioError(e)',
         )
       : e is PlatformException
           ? AppException(exception: e, description: e.message)
@@ -25,7 +25,7 @@ class ErrorMapper {
                           description: e.toString(),
                         );
 
-  static String _dioError(DioError error) {
+/*  static String _dioError(DioError error) {
     switch (error.type) {
       case DioErrorType.sendTimeout:
       case DioErrorType.connectTimeout:
@@ -62,5 +62,5 @@ class ErrorMapper {
       }
     }
     return '';
-  }
+  }*/
 }

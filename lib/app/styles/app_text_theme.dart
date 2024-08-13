@@ -7,54 +7,54 @@ class AppTextTheme {
   static TextTheme get textTheme => textThemeMontserrat;
 
   static TextTheme textThemeMontserrat = TextTheme(
-    headline1: GoogleFonts.montserrat(
+    displayLarge: GoogleFonts.roboto(
       fontSize: 96,
       fontWeight: FontWeight.w300,
     ),
-    headline2: GoogleFonts.montserrat(
+    displayMedium: GoogleFonts.roboto(
       fontSize: 60,
       fontWeight: FontWeight.w300,
     ),
-    headline3: GoogleFonts.montserrat(
+    displaySmall: GoogleFonts.roboto(
       fontSize: 48,
       fontWeight: FontWeight.w400,
     ),
-    headline4: GoogleFonts.montserrat(
+    headlineMedium: GoogleFonts.roboto(
       fontSize: 34,
       fontWeight: FontWeight.w400,
     ),
-    headline5: GoogleFonts.montserrat(
+    headlineSmall: GoogleFonts.roboto(
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
-    headline6: GoogleFonts.montserrat(
+    titleLarge: GoogleFonts.roboto(
       fontSize: 20,
       fontWeight: FontWeight.bold,
     ),
-    subtitle1: GoogleFonts.montserrat(
+    titleMedium: GoogleFonts.roboto(
       fontSize: 16,
       fontWeight: FontWeight.w400,
     ),
-    subtitle2: GoogleFonts.montserrat(
+    titleSmall: GoogleFonts.roboto(
       fontSize: 14,
       fontWeight: FontWeight.w500,
     ),
-    bodyText1: GoogleFonts.montserrat(
+    bodyLarge: GoogleFonts.roboto(
       fontSize: 16,
       fontWeight: FontWeight.w600,
     ),
-    bodyText2: GoogleFonts.montserrat(
+    bodyMedium: GoogleFonts.roboto(
       fontSize: 16,
     ),
-    button: GoogleFonts.montserrat(
+    labelLarge: GoogleFonts.roboto(
       fontSize: 14,
       fontWeight: FontWeight.bold,
     ),
-    caption: GoogleFonts.montserrat(
+    bodySmall: GoogleFonts.roboto(
       fontSize: 12,
       fontWeight: FontWeight.w400,
     ),
-    overline: GoogleFonts.montserrat(
+    labelSmall: GoogleFonts.roboto(
       fontSize: 10,
       fontWeight: FontWeight.w400,
     ),

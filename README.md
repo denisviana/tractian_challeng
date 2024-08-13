@@ -27,5 +27,56 @@ This project is a dynamic Tree View Application designed to manage and visualize
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/denisviana/tractian_challeng.git
+   git clone https://github.com/yourusername/tree-view-application.git
    cd tree-view-application
+
+2. **Install dependencies:**
+
+   ```bash
+   flutter pub get
+   
+3. **Run the application:**
+
+   ```
+    flutter run
+    ```
+
+## API Setup:
+
+- The application fetches data from a live API to populate the tree structure.
+- You can use the following API endpoints to retrieve data:
+
+  - `/companies`
+  - `/companies/:companyId/locations`
+  - `/companies/:companyId/assets`
+
+## Usage Instructions
+
+1. **View Tree Structure:**
+   - Explore the hierarchical relationship between locations, assets, and components.
+   - Click on the arrow icons to expand or collapse the tree nodes.
+
+2. **Search for Assets:** 
+   - Use the search bar to find specific assets, locations, or components within the tree structure.
+   - The tree view will automatically navigate to the searched item.
+
+3. **Filter Assets:**
+   - Use the filter options to isolate assets with energy sensors or critical status.
+   - The tree view will display only the assets that match the selected filters.
+
+## Demo Video
+
+[![Watch the video](https://img.youtube.com/vi/yourvideo.jpg)](https://youtu.be/yourvideo)
+
+## Credits and Acknowledgements
+    - Libraries Used
+        - [GetX](https://pub.dev/packages/get) for state management.
+        - [Dio](https://pub.dev/packages/dio) for network requests.
+        - [GetIt](https://pub.dev/packages/get_it) for dependency injection.
+        - [Flutter](https://flutter.dev/) for building the application.
+
+## Improvements
+    - Named routes navigation.
+    - Unit tests for components.
+    - Error handling for network requests.
+    - Integration with a backend server for data storage.

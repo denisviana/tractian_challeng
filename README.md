@@ -66,17 +66,17 @@ This project is a dynamic Tree View Application designed to manage and visualize
 
 ## Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/yourvideo.jpg)](https://youtu.be/yourvideo)
+[![Watch the video](https://github.com/user-attachments/assets/ccbae0c8-0819-42fc-8018-c42ac0103cbf)
 
 ## Credits and Acknowledgements
-    - Libraries Used
-        - [GetX](https://pub.dev/packages/get) for state management.
-        - [Dio](https://pub.dev/packages/dio) for network requests.
-        - [GetIt](https://pub.dev/packages/get_it) for dependency injection.
-        - [Flutter](https://flutter.dev/) for building the application.
+- Libraries Used
+  - [GetX](https://pub.dev/packages/get) for state management.
+  - [Dio](https://pub.dev/packages/dio) for network requests.
+  - [GetIt](https://pub.dev/packages/get_it) for dependency injection.
+  - [Flutter](https://flutter.dev/) for building the application.
 
 ## Improvements
-    - Named routes navigation.
-    - Unit tests for components.
-    - Error handling for network requests.
-    - Integration with a backend server for data storage.
+- Named routes navigation.
+- Unit tests for components.
+- Error handling for network requests.
+- Integration with a backend server for data storage.
